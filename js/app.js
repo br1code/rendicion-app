@@ -54,27 +54,27 @@ var app = {
     },
 
     // Update a property of a ticket
-    updateTicketProperty: function(property) {
+    updateTicketProperty: function(cellProperty) {
         // Get the new value with a simple input alert
         let newValue = prompt('Ingrese el nuevo valor');
         // Validate the value
-        if (!newValue) return;
+        if (!newValue) return alert('Por favor ingrese un nuevo valor');
         // Get the id of the ticket
-        let ticketId = property.parentElement.getAttribute('id');
+        let ticketId = cellProperty.parentElement.getAttribute('id');
         // Get the ticket by the id
         let ticket = this.getTicketById(ticketId);
         // Get the property name to change
-        let propertyName = property.attributes.ticketProperty.value;
+        let propertyName = cellProperty.attributes.ticketProperty.value;
         // If the property is a money value, convert to float
         if (propertyName === 'cash' || propertyName === 'cheque') {
             // Validate money value
-            if (isNaN(parseFloat(newValue))) return;
+            if (isNaN(parseFloat(newValue))) return alert('Por favor ingrese un monto correcto');
             newValue = parseFloat(newValue);
         }
         // Update the property of the ticket
         ticket[propertyName] = newValue;
         // Update the property from the UI
-        UI.updateProperty(property, newValue);
+        UI.updateProperty(cellProperty, newValue);
         // Update the total stats
         this.updateTotals();
     },

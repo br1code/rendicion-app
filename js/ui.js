@@ -41,6 +41,7 @@ var UI = {
         insertCells(ticketRow, ticket, ticketIndex);
         // Add the prop name to each cell of the row
         addNameToEachCell(ticketRow);
+        return ticketRow;
     },
 
     // Reset the values of each input

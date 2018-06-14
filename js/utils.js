@@ -32,3 +32,15 @@ function addNameToEachCell(row) {
     cells[4].setAttribute('ticketProperty', 'cash');
     cells[5].setAttribute('ticketProperty', 'cheque');
 }
+
+// Add a event handler to each cell of a row
+function addEventToEachCell(row, listener) {
+    // Avoid the first cell to not allow modify the totalTickets property
+    for (let i = 1; i < row.cells.length; i++) {
+        row.cells[i].addEventListener('click', function(e) {
+            /* Call the listener with a given 'this' value of app 
+                to prevent the 'this' property from being overwritten */
+            listener.call(app, row.cells[i]);
+        });
+    }
+}
