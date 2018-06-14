@@ -1,0 +1,107 @@
+body {
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	background: #0575E6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+	color: white;
+}
+#inputs input {
+	width: 8%;
+	margin: 20px 20px;
+	padding-left: 20px;
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	border:none;
+  	border-bottom:1px solid black;
+  	background-color: inherit;
+  	color: white;
+  	outline:none;
+  	-moz-transition:width 0.5s ease-in-out;
+  	transition: width 0.5s ease-in-out;
+  	-webkit-transition: width 0.5s ease-in-out;
+}
+
+#inputs input:focus {
+	width: 15%;
+	
+}
+
+/* tables */
+table {
+	width: 100%;
+	margin-top: 20px;
+	background: inherit;
+}
+
+table, td, th{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+td:hover {
+	background: #0575E6;
+	color: white;
+}
+
+th {
+	font-size: 25px;
+	background-color: inherit;
+	color: white;
+}
+
+td {
+	background-color: white;
+}
+
+hr {
+	border-top: 1px solid #8c8b8b;
+	border-bottom: 1px solid #fff;
+}
+
+#totals {
+	margin: 0;
+	font-size: 15px;
+}
+/* end tables */
+
+/* INPUT FADE IN-OUT */
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+  -moz-transition: visibility 0s 0.5s, opacity 0.5s linear;
+  -moz-transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+}
+
+/* PLACE HOLDER */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
