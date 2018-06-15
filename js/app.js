@@ -62,7 +62,7 @@ var app = {
         // Get the id of the ticket
         let ticketId = cellProperty.parentElement.getAttribute('id');
         // Get the ticket by the id
-        let ticket = this.getTicketById(ticketId);
+        let ticket = app.getTicketById(ticketId);
         // Get the property name to change
         let propertyName = cellProperty.attributes.ticketProperty.value;
         // If the property is a money value, convert to float
@@ -76,7 +76,7 @@ var app = {
         // Update the property from the UI
         UI.updateProperty(cellProperty, newValue);
         // Update the total stats
-        this.updateTotals();
+        app.updateTotals();
     },
 
     // Get a ticket from the tickets list by the id

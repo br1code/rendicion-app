@@ -31,8 +31,3 @@ function addTicketEvent(e) {
     // Reset inputs
     UI.resetInputs();
 }
-
-
-
-
-

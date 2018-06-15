@@ -25,12 +25,12 @@ function insertCells(ticketRow, ticket, ticketIndex) {
 }
 // Set 'ticketProperty' attribute to each cell to use later
 function addNameToEachCell(row) {
+    let props = ['client', 'installer', 'month', 'cash', 'cheque'];
     let cells = row.cells;
-    cells[1].setAttribute('ticketProperty', 'client');
-    cells[2].setAttribute('ticketProperty', 'installer');
-    cells[3].setAttribute('ticketProperty', 'month');
-    cells[4].setAttribute('ticketProperty', 'cash');
-    cells[5].setAttribute('ticketProperty', 'cheque');
+    // Avoid the first cell to not add a property to the index of the row
+    for (let i = 1; i < cells.length; i++) {
+        cells[i].setAttribute('ticketProperty', props[i - 1]);
+    }
 }
 
 // Add a event handler to each cell of a row
@@ -38,9 +38,7 @@ function addEventToEachCell(row, listener) {
     // Avoid the first cell to not allow modify the totalTickets property
     for (let i = 1; i < row.cells.length; i++) {
         row.cells[i].addEventListener('click', function(e) {
-            /* Call the listener with a given 'this' value of app 
-                to prevent the 'this' property from being overwritten */
-            listener.call(app, row.cells[i]);
+            listener(row.cells[i]);
         });
     }
 }
